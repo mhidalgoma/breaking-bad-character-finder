@@ -1,0 +1,13 @@
+.footer {
+  height: 5vh;
+  width: 100vw;
+  background-color: $color-primary;
+  padding: 0px 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,43 @@
+.header {
+  width: 100vw;
+  height: 25vh;
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    font-size: 50px;
+    text-align: center;
+  }
+}
+
+.nav {
+  background-color: white;
+  box-shadow: 1px 1px 10px #888888;
+  padding: 25px;
+  width: 90vw;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 65px;
+  &__input {
+    width: 74%;
+    height: 25px;
+    font-size: 15px;
+    padding-left: 15px;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+  }
+  &__btn {
+    width: 20%;
+    height: 31px;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 15px;
+    background-color: $color-primary;
+    color: white;
+    border: 2px solid $color-primary;
+  }
+}

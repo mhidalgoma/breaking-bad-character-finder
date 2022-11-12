@@ -1,0 +1,13 @@
+.fav {
+  background-color: aqua;
+  height: 70vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 25px 25px 25px;
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-primary;
+  }
+}
