@@ -1,13 +1,55 @@
 .fav {
-  background-color: aqua;
+  background-color: rgba(255, 128, 0, 0.422);
   height: 70vh;
-  width: 30vw;
+  width: 25vw;
   display: flex;
   flex-direction: column;
-  padding: 70px 25px 25px 25px;
+  align-items: center;
+  padding: 70px 25px 0px 25px;
+  margin: 0px;
   &__title {
     font-size: 20px;
     font-weight: 600;
     color: $color-primary;
+    padding-bottom: 20px;
+    &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+    }
   }
+}
+.character {
+  background-color: white;
+  box-shadow: 1px 1px 10px #888888;
+  width: 200px;
+  height: 280px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+  }
+  &__name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 10px;
+  }
+  &__state {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 15px;
+    color: $color-primary;
+  }
+}
+
+.hidden {
+  display: none;
 }

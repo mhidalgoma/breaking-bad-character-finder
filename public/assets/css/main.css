@@ -1,0 +1,264 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.display {
+  display: flex;
+  width: 100vw; }
+
+.header {
+  width: 100vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/40acc98f-cd7f-496b-bec3-9cc106345e03/d4244se-06af48c3-5e45-4ae4-8623-c3ba0f0c6a78.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQwYWNjOThmLWNkN2YtNDk2Yi1iZWMzLTljYzEwNjM0NWUwM1wvZDQyNDRzZS0wNmFmNDhjMy01ZTQ1LTRhZTQtODYyMy1jM2JhMGYwYzZhNzguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.E9REtHPQK3SYCWhbT9xGpxR2Y1SOlyU5najKTiz7YYk");
+  -o-object-fit: scale-down;
+  object-fit: scale-down; }
+  .header__title {
+    font-size: 50px;
+    text-align: center; }
+
+.nav {
+  background-color: white;
+  box-shadow: 1px 1px 10px #888888;
+  padding: 20px;
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 60px; }
+  .nav__input {
+    width: 74%;
+    font-size: 15px;
+    padding: 8px 15px;
+    color: orangered;
+    border: 2px solid orangered; }
+  .nav__btn {
+    width: 20%;
+    height: 38px;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 15px;
+    background-color: orangered;
+    color: white;
+    border: 2px solid orangered; }
+
+.fav {
+  background-color: rgba(255, 128, 0, 0.422);
+  height: 70vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 25px 0px 25px;
+  margin: 0px; }
+  .fav__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: orangered;
+    padding-bottom: 20px; }
+    .fav__title__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll; }
+
+.character {
+  background-color: white;
+  box-shadow: 1px 1px 10px #888888;
+  width: 200px;
+  height: 280px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .character__img {
+    width: 150px;
+    height: 180px;
+    -o-object-fit: cover;
+    object-fit: cover; }
+  .character__name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 10px; }
+  .character__state {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 15px;
+    color: orangered; }
+
+.hidden {
+  display: none; }
+
+.characters {
+  height: 70vh;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 25px 0px 25px; }
+  .characters__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: orangered;
+    padding-bottom: 20px; }
+  .characters__list {
+    width: 95%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    overflow: scroll; }
+
+.when-hidden {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 25px 0px 25px; }
+
+.footer {
+  height: 5vh;
+  width: 100vw;
+  background-color: orangered;
+  padding: 0px 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer__text {
+    font-size: 14px; }
+
+/*# sourceMappingURL=main.css.map */

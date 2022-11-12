@@ -1,11 +1,13 @@
 .header {
   width: 100vw;
   height: 25vh;
-  background-color: $color-primary;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/40acc98f-cd7f-496b-bec3-9cc106345e03/d4244se-06af48c3-5e45-4ae4-8623-c3ba0f0c6a78.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQwYWNjOThmLWNkN2YtNDk2Yi1iZWMzLTljYzEwNjM0NWUwM1wvZDQyNDRzZS0wNmFmNDhjMy01ZTQ1LTRhZTQtODYyMy1jM2JhMGYwYzZhNzguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.E9REtHPQK3SYCWhbT9xGpxR2Y1SOlyU5najKTiz7YYk');
+  object-fit: scale-down;
+
   &__title {
     font-size: 50px;
     text-align: center;
@@ -15,24 +17,23 @@
 .nav {
   background-color: white;
   box-shadow: 1px 1px 10px #888888;
-  padding: 25px;
+  padding: 20px;
   width: 90vw;
-  height: 25px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
-  top: 65px;
+  top: 60px;
   &__input {
     width: 74%;
-    height: 25px;
     font-size: 15px;
-    padding-left: 15px;
+    padding: 8px 15px;
     color: $color-primary;
     border: 2px solid $color-primary;
   }
   &__btn {
     width: 20%;
-    height: 31px;
+    height: 38px;
     font-size: 15px;
     font-weight: 600;
     padding-left: 15px;
