@@ -1,6 +1,9 @@
 'use strict';
 //QUERY SELECTORS
 const charactersList = document.querySelector('.js-characters-list');
+const searchBtn = document.querySelector('.js-search-btn');
+const input = document.querySelector('.js-input');
+
 
 //VARIABLES GLOBALES
 let allCharacters = [];
@@ -15,7 +18,6 @@ fetch ('https://breakingbadapi.com/api/characters')
     renderAllCharacters();
     
 })
-
 
 function renderOneCharacter (character){
     
@@ -53,3 +55,16 @@ function renderAllCharacters(){
     }
 }
 
+//Funcionalidad del botón de Search
+
+function handleSearchBtn (event){
+event.preventDefault();
+const searchedNameList = allCharacters.filter((character)=>character.name.toLowerCase().includes(input.value.toLowerCase()));
+charactersList.innerHTML = '';
+for (let i = 0; i < searchedNameList.length; i++) {
+    renderOneCharacter(searchedNameList[i]);        
+}
+}
+
+
+searchBtn.addEventListener('click', handleSearchBtn);
