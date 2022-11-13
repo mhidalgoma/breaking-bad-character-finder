@@ -12,14 +12,14 @@
 
 <body>
   <header class="header">
-    <h1 class="header__title">BREAKING BAD</h1>
+    <h1 class="header__title">Breaking bad characters</h1>
     <nav class="nav">
-      <input class="nav__input" type="text" placeholder="Example: Walter White">
-      <button class="nav__btn">Search</button>
+      <input class="nav__input js-input" type="text" placeholder="Example: Walter White">
+      <button class="nav__btn js-search-btn">Search</button>
     </nav>
   </header>
   <div class="display">
-    <aside class="fav">
+    <aside class="fav hidden">
       <h2 class="fav__title">Favorites <i class="fa-solid fa-heart"></i></h2>
       <ul class="fav__list">
         <li class="character">
@@ -32,44 +32,9 @@
       </ul>
     </aside>
     <main class="main">
-      <section class="characters ">
+      <section class="characters when-hidden">
         <h2 class="characters__title">Characters <i class="fa-solid fa-people-group"></i></h2>
-        <ul class="characters__list">
-          <li class="character">
-            <img class="character__img"
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
-              alt="" />
-            <h3 class="character__name">Character name</h3>
-            <p class="character__state">alive/dead</p>
-          </li>
-          <li class="character">
-            <img class="character__img"
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
-              alt="" />
-            <h3 class="character__name">Character name</h3>
-            <p class="character__state">alive/dead</p>
-          </li>
-          <li class="character">
-            <img class="character__img"
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
-              alt="" />
-            <h3 class="character__name">Character name</h3>
-            <p class="character__state">alive/dead</p>
-          </li>
-          <li class="character">
-            <img class="character__img"
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
-              alt="" />
-            <h3 class="character__name">Character name</h3>
-            <p class="character__state">alive/dead</p>
-          </li>
-          <li class="character">
-            <img class="character__img"
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Walter_White_S5B.png/220px-Walter_White_S5B.png"
-              alt="" />
-            <h3 class="character__name">Character name</h3>
-            <p class="character__state">alive/dead</p>
-          </li>
+        <ul class="characters__list js-characters-list">
         </ul>
       </section>
     </main>

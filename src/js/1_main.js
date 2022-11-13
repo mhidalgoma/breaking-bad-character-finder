@@ -66,5 +66,4 @@ for (let i = 0; i < searchedNameList.length; i++) {
 }
 }
 
-
 searchBtn.addEventListener('click', handleSearchBtn);
