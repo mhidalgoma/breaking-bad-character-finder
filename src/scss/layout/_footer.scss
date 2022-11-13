@@ -1,5 +1,5 @@
 .footer {
-  height: 5vh;
+  height: 40px;
   width: 100vw;
   background-color: $color-primary;
   padding: 0px 15px;
@@ -7,6 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+
   &__text {
     font-size: 14px;
   }
