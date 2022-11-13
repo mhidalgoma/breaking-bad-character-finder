@@ -215,7 +215,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     padding-top: 10px; }
-  .character__state {
+  .character__status {
     text-align: center;
     font-size: 14px;
     padding-top: 15px;
@@ -244,7 +244,7 @@ body {
     flex-wrap: wrap; }
 
 .when-hidden {
-  width: 100%; }
+  width: 100vw; }
 
 .footer {
   height: 40px;
