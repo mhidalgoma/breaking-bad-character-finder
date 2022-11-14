@@ -212,12 +212,12 @@ body {
     font-weight: 600;
     color: #141e17;
     padding-bottom: 20px; }
-    .fav__title__list {
-      width: 98%;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap; }
+  .fav__list {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; }
 
 .character {
   background-color: white;

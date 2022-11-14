@@ -12,13 +12,13 @@
     font-weight: 600;
     color: $color-secondary;
     padding-bottom: 20px;
-    &__list {
-      width: 98%;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  }
+  &__list {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 }
 .character {

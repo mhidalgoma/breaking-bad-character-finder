@@ -20,7 +20,10 @@ fetch ('https://breakingbadapi.com/api/characters')
 .then ((response)=>response.json())
 .then ((jsondata)=>{
     allCharacters = jsondata;
-    renderAllCharacters();  
+    getFavoritesFromStorage();
+    renderFavCharacters();
+    renderAllCharacters();
+    hideShowFavSection();
 })
 
 function renderOneCharacter (character){
@@ -65,8 +68,13 @@ function listenerForCharacters(){
 function renderAllCharacters(){
     charactersList.innerHTML = '';
     for (let i = 0; i < allCharacters.length; i++) {
-        const cha= renderOneCharacter(allCharacters[i]);  
-         charactersList.appendChild(cha);   
+        const liCharacter= renderOneCharacter(allCharacters[i]);  
+        charactersList.appendChild(liCharacter);
+
+        const positionInFav = favCharacters.findIndex((favCharacter)=> favCharacter.char_id === parseInt(liCharacter.getAttribute('id')));
+        if (positionInFav !== -1){
+            liCharacter.classList.add('selected');
+        }
      }
     listenerForCharacters();
 }
@@ -93,32 +101,47 @@ function renderFavCharacters() {
     favList.innerHTML = '';
     for (let i = 0; i < favCharacters.length; i++) {
         const cha= renderOneCharacter(favCharacters[i]); 
-        favList.appendChild(cha);   
+        favList.appendChild(cha); 
+}
+    }
+function hideShowFavSection() {
+    if (favList.innerHTML === ''){
+        favSection.classList.add('hidden');
+        charactersSection.classList.add('when-hidden');
+    }else{
+        favSection.classList.remove('hidden');
+        charactersSection.classList.remove('when-hidden');
     }
 }
+function addCharacterToFav(){
+    if (event.currentTarget.classList.contains('selected')){
+        const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
+        const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id'))) ;
+        if (!characterInFav){
+            favCharacters.push(selectedCharacter);
+        }
+    }else{
+        const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
+        favCharacters.splice(selectedCharacterPosition,1);
+    }
+}
+
+function saveFavoritesToLocalStorage(){
+    console.log(favCharacters);
+    localStorage.setItem("Favorites", JSON.stringify(favCharacters));
+}
+function getFavoritesFromStorage(){
+    const savedFavorites = JSON.parse(localStorage.getItem("Favorites"));
+    favCharacters = savedFavorites;
+}
+
 
 function handleClickCharacter(event){
 event.currentTarget.classList.toggle('selected');
-if (event.currentTarget.classList.contains('selected')){
-    const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
-    const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
-    if (!characterInFav){
-        favCharacters.push(selectedCharacter);
-    }
-}else{
-    const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
-    favCharacters.splice(selectedCharacterPosition,1);
-}
-
+addCharacterToFav();
 renderFavCharacters();
-
-if (favList.innerHTML === ''){
-    favSection.classList.add('hidden');
-    charactersSection.classList.add('when-hidden');
-}else{
-    favSection.classList.remove('hidden');
-    charactersSection.classList.remove('when-hidden');
-}
+hideShowFavSection();
+saveFavoritesToLocalStorage();
 }
 
 // Almacenamiento local de favoritos
@@ -126,6 +149,28 @@ if (favList.innerHTML === ''){
 
 
 
+
+//   if (event.currentTarget.classList.contains('selected')){
+        
+    
+    
+    
+    
+//     const charactersToMark = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
+//         const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id'))) ;
+//         if (!characterInFav){
+//             favCharacters.push(selectedCharacter);
+//         }
+
+
+
+
+// for (const eachCharacter of allCharacters) {
+
+// const positionInFav = favCharacters.findIndex((favCharacter)=> favCharacter.id === eachCharacter.id);
+// if (positionInFav=== -1)
+// .classList.add('selected');
+// }
 
 
 //# sourceMappingURL=main.js.map
