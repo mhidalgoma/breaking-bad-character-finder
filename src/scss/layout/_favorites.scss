@@ -58,6 +58,13 @@
     position: relative;
     top: 28px;
     left: 52px;
+    &--cross {
+      color: $color-primary;
+      position: relative;
+      top: 235px;
+      left: 70px;
+      cursor: pointer;
+    }
   }
   &__img {
     width: 150px;

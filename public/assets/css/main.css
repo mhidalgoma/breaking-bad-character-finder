@@ -254,6 +254,12 @@ body {
     position: relative;
     top: 28px;
     left: 52px; }
+    .character__heart--cross {
+      color: #eebc28;
+      position: relative;
+      top: 235px;
+      left: 70px;
+      cursor: pointer; }
   .character__img {
     width: 150px;
     height: 180px;
