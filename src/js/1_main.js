@@ -4,7 +4,8 @@ const charactersList = document.querySelector('.js-characters-list');
 const favList = document.querySelector('.js-fav-list');
 const searchBtn = document.querySelector('.js-search-btn');
 const input = document.querySelector('.js-input');
-
+const charactersSection = document.querySelector('.js-characters-section');
+const favSection = document.querySelector('.js-fav-section');
 
 //VARIABLES GLOBALES
 let allCharacters = [];
@@ -101,7 +102,16 @@ if (event.currentTarget.classList.contains('selected')){
     const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
     favCharacters.splice(selectedCharacterPosition,1);
 }
+
 renderFavCharacters();
+
+if (favList.innerHTML === ''){
+    favSection.classList.add('hidden');
+    charactersSection.classList.add('when-hidden');
+}else{
+    favSection.classList.remove('hidden');
+    charactersSection.classList.remove('when-hidden');
+}
 }
 
 // Almacenamiento local de favoritos
