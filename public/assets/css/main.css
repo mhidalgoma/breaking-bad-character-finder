@@ -199,7 +199,7 @@ body {
   width: 100vw; }
 
 .fav {
-  background-color: #eebc287a;
+  background-color: #1b191a;
   min-height: 70vh;
   width: 35vw;
   display: flex;
@@ -210,7 +210,7 @@ body {
   .fav__title {
     font-size: 20px;
     font-weight: 600;
-    color: #141e17;
+    color: #eebc28;
     padding-bottom: 20px; }
   .fav__list {
     width: 98%;
@@ -250,10 +250,10 @@ body {
   align-items: center;
   cursor: pointer; }
   .character__heart {
-    color: #eebc28;
+    color: white;
     position: relative;
-    top: 28px;
-    left: 52px; }
+    top: 235px;
+    left: 70px; }
     .character__heart--cross {
       color: #eebc28;
       position: relative;
@@ -280,7 +280,7 @@ body {
   display: none; }
 
 .selected {
-  background-color: rgba(230, 190, 14, 0.297); }
+  background-color: #eebc28; }
 
 .footer {
   height: 40px;

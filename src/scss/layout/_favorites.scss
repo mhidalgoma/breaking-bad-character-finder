@@ -1,5 +1,5 @@
 .fav {
-  background-color: #eebc287a;
+  background-color: #1b191a;
   min-height: 70vh;
   width: 35vw;
   display: flex;
@@ -10,7 +10,7 @@
   &__title {
     font-size: 20px;
     font-weight: 600;
-    color: $color-secondary;
+    color: $color-primary;
     padding-bottom: 20px;
   }
   &__list {
@@ -54,10 +54,10 @@
   align-items: center;
   cursor: pointer;
   &__heart {
-    color: $color-primary;
+    color: white;
     position: relative;
-    top: 28px;
-    left: 52px;
+    top: 235px;
+    left: 70px;
     &--cross {
       color: $color-primary;
       position: relative;
@@ -90,5 +90,5 @@
 }
 
 .selected {
-  background-color: rgba(230, 190, 14, 0.297);
+  background-color: $color-primary;
 }

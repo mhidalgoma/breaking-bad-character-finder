@@ -23,15 +23,15 @@ function renderOneCharacter (character){
     characterElement.classList.add ('js-character');
     characterElement.setAttribute('id',character.char_id);
 
-    // const divHeart = document.createElement('div');
-    // const characterHeart = document.createElement('i');
-    // characterHeart.classList.add ('fa-solid');
-    // characterHeart.classList.add ('fa-heart');
-    // characterHeart.classList.add ('fa-xl');
-    // divHeart.appendChild(characterHeart);       
-    // divHeart.classList.add('character__heart');
-    // divHeart.classList.add('hidden');
-    // characterElement.appendChild(divHeart);
+    const divHeart = document.createElement('div');
+    const characterHeart = document.createElement('i');
+    characterHeart.classList.add ('fa-solid');
+    characterHeart.classList.add ('fa-heart');
+    characterHeart.classList.add ('fa-xl');
+    divHeart.appendChild(characterHeart);       
+    divHeart.classList.add('character__heart');
+    //divHeart.classList.add('hidden');
+    characterElement.appendChild(divHeart);
 
 
     const characterImg = document.createElement('img');
