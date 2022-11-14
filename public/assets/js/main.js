@@ -1,4 +1,5 @@
 'use strict';
+
 //QUERY SELECTORS
 const charactersList = document.querySelector('.js-characters-list');
 const favList = document.querySelector('.js-fav-list');
@@ -28,6 +29,7 @@ function renderOneCharacter (character){
     const characterElement = document.createElement('li');
     characterElement.classList.add ('character');
     characterElement.classList.add ('js-character');
+    characterElement.setAttribute('id',character.char_id);
 
     const characterImg = document.createElement('img');
     characterImg.classList.add ('character__img');
@@ -51,18 +53,22 @@ function renderOneCharacter (character){
     return characterElement;
 }
 
-function renderAllCharacters(){
-    charactersList.innerHTML = '';
-    
-    for (let i = 0; i < allCharacters.length; i++) {
-        const cha= renderOneCharacter(allCharacters[i]);  
-        charactersList.appendChild(cha); 
-        cha.dataset.id = allCharacters[i].char_id;    
-    }
+
+function listenerForCharacters(){
     const allCharactersLi = document.querySelectorAll('.js-character');
     for (const eachCharacter of allCharactersLi){
         eachCharacter.addEventListener('click',handleClickCharacter)
     }
+}
+
+
+function renderAllCharacters(){
+    charactersList.innerHTML = '';
+    for (let i = 0; i < allCharacters.length; i++) {
+        const cha= renderOneCharacter(allCharacters[i]);  
+         charactersList.appendChild(cha);   
+     }
+    listenerForCharacters();
 }
 
 //Funcionalidad del botón de Search
@@ -75,6 +81,7 @@ for (let i = 0; i < searchedNameList.length; i++) {
     const cha = renderOneCharacter(searchedNameList[i]); 
     charactersList.appendChild(cha);   
 }
+listenerForCharacters();
 }
 
 searchBtn.addEventListener('click', handleSearchBtn);
@@ -93,13 +100,13 @@ function renderFavCharacters() {
 function handleClickCharacter(event){
 event.currentTarget.classList.toggle('selected');
 if (event.currentTarget.classList.contains('selected')){
-    const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
-    const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
+    const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
+    const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
     if (!characterInFav){
         favCharacters.push(selectedCharacter);
     }
 }else{
-    const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
+    const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
     favCharacters.splice(selectedCharacterPosition,1);
 }
 
