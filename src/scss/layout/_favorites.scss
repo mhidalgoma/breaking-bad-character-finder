@@ -20,6 +20,27 @@
     gap: 20px;
     flex-wrap: wrap;
   }
+  &__reset--btn {
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    //transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 160px;
+    height: 40px;
+    color: white;
+    background-color: $color-primary;
+    margin-top: 30px;
+  }
+}
+.fa-trash-can {
+  margin-right: 10px;
 }
 .character {
   background-color: white;
@@ -32,6 +53,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  &__heart {
+    color: $color-primary;
+    position: relative;
+    top: 28px;
+    left: 52px;
+  }
   &__img {
     width: 150px;
     height: 180px;

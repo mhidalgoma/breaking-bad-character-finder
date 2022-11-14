@@ -7,6 +7,7 @@ const searchBtn = document.querySelector('.js-search-btn');
 const input = document.querySelector('.js-input');
 const charactersSection = document.querySelector('.js-characters-section');
 const favSection = document.querySelector('.js-fav-section');
+const resetBtn = document.querySelector('.js-reset-btn');
 
 //VARIABLES GLOBALES
 let allCharacters = [];
@@ -33,6 +34,16 @@ function renderOneCharacter (character){
     characterElement.classList.add ('character');
     characterElement.classList.add ('js-character');
     characterElement.setAttribute('id',character.char_id);
+
+    // const divHeart = document.createElement('div');
+    // const characterHeart = document.createElement('i');
+    // characterHeart.classList.add ('fa-solid');
+    // characterHeart.classList.add ('fa-heart');
+    // characterHeart.classList.add ('fa-xl');
+    // divHeart.appendChild(characterHeart);       
+    // divHeart.classList.add('character__heart');
+    // divHeart.classList.add('hidden');
+    // characterElement.appendChild(divHeart);
 
     const characterImg = document.createElement('img');
     characterImg.classList.add ('character__img');
@@ -63,6 +74,13 @@ function listenerForCharacters(){
         eachCharacter.addEventListener('click',handleClickCharacter)
     }
 }
+
+// function listenerForFavCharacters(){
+//     const allCharactersLi = document.querySelectorAll('.js-character');
+//     for (const eachCharacter of allCharactersLi){
+//         eachCharacter.addEventListener('click',handleClickCharacter)
+//     }
+// }
 
 
 function renderAllCharacters(){
@@ -100,8 +118,8 @@ searchBtn.addEventListener('click', handleSearchBtn);
 function renderFavCharacters() {
     favList.innerHTML = '';
     for (let i = 0; i < favCharacters.length; i++) {
-        const cha= renderOneCharacter(favCharacters[i]); 
-        favList.appendChild(cha); 
+        const favCharacterToRender= renderOneCharacter(favCharacters[i]); 
+        favList.appendChild(favCharacterToRender); 
 }
     }
 function hideShowFavSection() {
@@ -127,7 +145,6 @@ function addCharacterToFav(){
 }
 
 function saveFavoritesToLocalStorage(){
-    console.log(favCharacters);
     localStorage.setItem("Favorites", JSON.stringify(favCharacters));
 }
 function getFavoritesFromStorage(){
@@ -143,34 +160,13 @@ renderFavCharacters();
 hideShowFavSection();
 saveFavoritesToLocalStorage();
 }
-
-// Almacenamiento local de favoritos
-
-
-
-
-
-//   if (event.currentTarget.classList.contains('selected')){
-        
-    
-    
-    
-    
-//     const charactersToMark = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
-//         const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id'))) ;
-//         if (!characterInFav){
-//             favCharacters.push(selectedCharacter);
-//         }
-
-
-
-
-// for (const eachCharacter of allCharacters) {
-
-// const positionInFav = favCharacters.findIndex((favCharacter)=> favCharacter.id === eachCharacter.id);
-// if (positionInFav=== -1)
-// .classList.add('selected');
-// }
-
+function handleResetBtn(event){
+    event.preventDefault();
+    favCharacters = [];
+    renderFavCharacters();
+    renderAllCharacters();
+    hideShowFavSection();
+}
+resetBtn.addEventListener('click',handleResetBtn);
 
 //# sourceMappingURL=main.js.map
