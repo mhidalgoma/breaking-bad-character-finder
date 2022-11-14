@@ -79,12 +79,10 @@ for (let i = 0; i < searchedNameList.length; i++) {
 searchBtn.addEventListener('click', handleSearchBtn);
 
 
-//Marcar los personajes favoritos
+//Marcar los personajes favoritos y pintarlos en la columna de favoritos sin repetirlos o sacarlos de favoritos.
 
 function renderFavCharacters() {
     favList.innerHTML = '';
-    console.log(favCharacters);
-    
     for (let i = 0; i < favCharacters.length; i++) {
         const cha= renderOneCharacter(favCharacters[i]); 
         favList.appendChild(cha);   
@@ -93,16 +91,20 @@ function renderFavCharacters() {
 
 function handleClickCharacter(event){
 event.currentTarget.classList.toggle('selected');
-//console.log(event.currentTarget.getAttribute('data-id'));
-const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
-const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
-if (!characterInFav){
-    favCharacters.push(selectedCharacter);
+if (event.currentTarget.classList.contains('selected')){
+    const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
+    const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
+    if (!characterInFav){
+        favCharacters.push(selectedCharacter);
+    }
+}else{
+    const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('data-id')));
+    favCharacters.splice(selectedCharacterPosition,1);
 }
-
 renderFavCharacters();
-
 }
+
+// Almacenamiento local de favoritos
 
 
 
