@@ -110,7 +110,6 @@ function renderAllCharacters(){
 }
 function renderFavCharacters(){
     favList.innerHTML = '';
-    console.log('hola',favCharacters);
     for (let i = 0; i < favCharacters.length; i++) {
         const favCharacterToRender= renderOneFavCharacter(favCharacters[i]); 
         favList.appendChild(favCharacterToRender); 
@@ -144,7 +143,6 @@ function addCharacterToFav(){
         const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id'))) ;
         if (!characterInFav){
             favCharacters.push(selectedCharacter);
-            //debugger;
         }
     }else{
         const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
@@ -183,7 +181,6 @@ function handleClickHeart (event){
     const selectedCharacterPosition = favCharacters.findIndex((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.closest('.js-fav-character').getAttribute('id')));
     console.log(selectedCharacterPosition);
     favCharacters.splice(selectedCharacterPosition,1);
-    console.log(favCharacters);
     renderFavCharacters();
     saveFavoritesToLocalStorage();
     renderAllCharacters();
