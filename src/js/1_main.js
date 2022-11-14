@@ -12,6 +12,7 @@ const resetBtn = document.querySelector('.js-reset-btn');
 //VARIABLES GLOBALES
 let allCharacters = [];
 let favCharacters = [];
+let currentSearchCharacters = [];
 
 // FUNCIONES
 function renderOneCharacter (character){
@@ -94,8 +95,11 @@ function renderOneFavCharacter(character){
 }
 function renderAllCharacters(){
     charactersList.innerHTML = '';
-    for (let i = 0; i < allCharacters.length; i++) {
-        const liCharacter= renderOneCharacter(allCharacters[i]);  
+
+    const characters = currentSearchCharacters.length === 0 ? allCharacters : currentSearchCharacters;
+
+    for (let i = 0; i < characters.length; i++) {
+        const liCharacter= renderOneCharacter(characters[i]);  
         charactersList.appendChild(liCharacter);
         const positionInFav = favCharacters.findIndex((favCharacter)=> favCharacter.char_id === parseInt(liCharacter.getAttribute('id')));
         if (positionInFav !== -1){
@@ -171,12 +175,8 @@ function handleResetBtn(event){
 }
 function handleSearchBtn (event){
     event.preventDefault();
-    const searchedNameList = allCharacters.filter((character)=>character.name.toLowerCase().includes(input.value.toLowerCase()));
-    charactersList.innerHTML = '';
-    for (let i = 0; i < searchedNameList.length; i++) {
-        const charSearchedLi = renderOneCharacter(searchedNameList[i]); 
-        charactersList.appendChild(charSearchedLi);   
-    }
+    currentSearchCharacters = allCharacters.filter((character)=>character.name.toLowerCase().includes(input.value.toLowerCase()));
+    renderAllCharacters();
     listenerForCharacters();
     }
 function handleClickHeart (event){
