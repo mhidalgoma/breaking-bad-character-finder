@@ -166,6 +166,7 @@ function handleResetBtn(event){
     renderFavCharacters();
     renderAllCharacters();
     hideShowFavSection();
+    saveFavoritesToLocalStorage();
 }
 resetBtn.addEventListener('click',handleResetBtn);
 
