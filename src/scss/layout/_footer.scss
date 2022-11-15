@@ -11,6 +11,8 @@
   bottom: 0;
 
   &__text {
+    font-family: $font-main;
+    font-weight: 600;
     font-size: 14px;
   }
 }

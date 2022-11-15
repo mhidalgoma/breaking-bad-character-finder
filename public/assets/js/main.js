@@ -80,13 +80,13 @@ function renderOneFavCharacter(character){
     characterElement.appendChild(characterImg);
 
     const characterName = document.createElement('h3');
-    characterName.classList.add ('character__name');
+    characterName.classList.add ('character__name--fav');
     const textName = document.createTextNode(character.name);
     characterName.appendChild(textName);
     characterElement.appendChild(characterName);
 
     const characterStatus = document.createElement('p');
-    characterStatus.classList.add ('character__status');
+    characterStatus.classList.add ('character__status--fav');
     const textStatus = document.createTextNode(character.status);
     characterStatus.appendChild(textStatus);
     characterElement.appendChild(characterStatus);
