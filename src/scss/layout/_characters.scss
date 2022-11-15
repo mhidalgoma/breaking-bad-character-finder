@@ -1,10 +1,17 @@
 .characters {
   min-height: 70vh;
-  width: 65vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 25px 80px 25px;
+  padding: 70px 25px 40px 25px;
+  @media all and (min-width: 768px) {
+    width: 65vw;
+    padding: 70px 25px 110px 25px;
+  }
+  @media all and (min-width: 768px) {
+    padding: 70px 25px 80px 25px;
+  }
   &__title {
     font-size: 30px;
     font-family: $font-title;

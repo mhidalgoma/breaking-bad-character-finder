@@ -8,6 +8,8 @@ const input = document.querySelector('.js-input');
 const charactersSection = document.querySelector('.js-characters-section');
 const favSection = document.querySelector('.js-fav-section');
 const resetBtn = document.querySelector('.js-reset-btn');
+const goFavBtn = document.querySelector('.js-btn-go-fav');
+
 
 //VARIABLES GLOBALES
 let allCharacters = [];

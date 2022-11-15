@@ -1,5 +1,6 @@
 .footer {
-  height: 40px;
+  height: 70px;
+  text-align: center;
   width: 100vw;
   background-color: $color-primary;
   padding: 0px 15px;
@@ -9,10 +10,14 @@
   align-items: center;
   position: fixed;
   bottom: 0;
+  @media all and (min-width: 1280px) {
+    height: 40px;
+  }
 
   &__text {
     font-family: $font-main;
     font-weight: 600;
     font-size: 14px;
+    line-height: 1.2;
   }
 }

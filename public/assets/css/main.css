@@ -136,7 +136,49 @@ body {
 
 .display {
   display: flex;
+  flex-direction: column-reverse;
   width: 100vw; }
+  @media all and (min-width: 768px) {
+    .display {
+      flex-direction: row; } }
+
+.btn-go-fav {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  top: 190px;
+  right: -50px;
+  transform: rotate(-0.25turn);
+  width: 140px;
+  height: 40px;
+  background-color: #1b191a;
+  border-radius: 5px;
+  color: #eebc28;
+  font-family: "Passion One", cursive;
+  font-size: 18px;
+  margin-top: 200px;
+  padding: 10px 10px; }
+  @media all and (min-width: 768px) {
+    .btn-go-fav {
+      display: none; } }
+
+.btn-go-up {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  background-color: #eebc28;
+  color: #1b191a;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 15px 10px;
+  position: relative;
+  left: 145px;
+  bottom: 45px; }
+  @media all and (min-width: 768px) {
+    .btn-go-up {
+      display: none; } }
 
 .header {
   width: 100%;
@@ -164,9 +206,10 @@ body {
   top: 100px; }
   .nav__input {
     width: 70%;
-    font-size: 15px;
+    font-size: 14px;
     padding: 8px 15px;
     color: #eebc28;
+    font-weight: 400;
     border: 2px solid #eebc28;
     border-radius: 5px; }
   .nav__input:hover {
@@ -186,11 +229,18 @@ body {
 
 .characters {
   min-height: 70vh;
-  width: 65vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 25px 80px 25px; }
+  padding: 70px 25px 40px 25px; }
+  @media all and (min-width: 768px) {
+    .characters {
+      width: 65vw;
+      padding: 70px 25px 110px 25px; } }
+  @media all and (min-width: 768px) {
+    .characters {
+      padding: 70px 25px 80px 25px; } }
   .characters__title {
     font-size: 30px;
     font-family: "Passion One", cursive;
@@ -209,12 +259,16 @@ body {
 .fav {
   background-color: #1b191a;
   min-height: 70vh;
-  width: 35vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 25px 0px 25px;
+  padding: 40px 25px 100px 25px;
   margin: 0px; }
+  @media all and (min-width: 768px) {
+    .fav {
+      width: 35vw;
+      padding: 70px 25px 0px 25px; } }
   .fav__title {
     font-size: 30px;
     font-family: "Passion One", cursive;
@@ -318,7 +372,8 @@ body {
   background-color: #eebc28; }
 
 .footer {
-  height: 40px;
+  height: 70px;
+  text-align: center;
   width: 100vw;
   background-color: #eebc28;
   padding: 0px 15px;
@@ -328,9 +383,13 @@ body {
   align-items: center;
   position: fixed;
   bottom: 0; }
+  @media all and (min-width: 1280px) {
+    .footer {
+      height: 40px; } }
   .footer__text {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
-    font-size: 14px; }
+    font-size: 14px;
+    line-height: 1.2; }
 
 /*# sourceMappingURL=main.css.map */

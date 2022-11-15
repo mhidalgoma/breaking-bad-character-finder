@@ -27,9 +27,12 @@
   top: 100px;
   &__input {
     width: 70%;
-    font-size: 15px;
+    font-size: 14px;
+
+    // font-size: 15px;
     padding: 8px 15px;
     color: $color-primary;
+    font-weight: 400;
     border: 2px solid $color-primary;
     border-radius: 5px;
   }
