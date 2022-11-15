@@ -137,7 +137,7 @@ function hideShowFavSection() {
         charactersSection.classList.remove('when-hidden');
     }
 }
-function addCharacterToFav(){
+function addCharacterToFav(event){
     if (event.currentTarget.classList.contains('selected')){
         const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
         const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id'))) ;
@@ -154,11 +154,13 @@ function saveFavoritesToLocalStorage(){
 }
 function getFavoritesFromStorage(){
     const savedFavorites = JSON.parse(localStorage.getItem("Favorites"));
-    favCharacters = savedFavorites;
+    if (savedFavorites !== null){
+        favCharacters = savedFavorites;
+    }
 }
 function handleClickCharacter(event){
 event.currentTarget.classList.toggle('selected');
-addCharacterToFav();
+addCharacterToFav(event);
 renderFavCharacters();
 hideShowFavSection();
 saveFavoritesToLocalStorage();
