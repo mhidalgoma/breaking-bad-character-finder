@@ -59,7 +59,7 @@ function renderOneFavCharacter(character){
     
     //Creo el li con todo lo que lleva dentro con DOM avanzado
     const characterElement = document.createElement('li');
-    characterElement.classList.add ('character');
+    characterElement.classList.add ('character--fav');
     characterElement.classList.add ('js-fav-character');
     characterElement.setAttribute('id',character.char_id);
 
@@ -139,8 +139,8 @@ function hideShowFavSection() {
 }
 function addCharacterToFav(event){
     if (event.currentTarget.classList.contains('selected')){
-        const selectedCharacter = allCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id')));
-        const characterInFav = favCharacters.find((eachCharacter)=> parseInt(eachCharacter.char_id) === parseInt(event.currentTarget.getAttribute('id'))) ;
+        const selectedCharacter = allCharacters.find((eachCharacter)=> eachCharacter.char_id === parseInt(event.currentTarget.getAttribute('id')));
+        const characterInFav = favCharacters.find((eachCharacter)=> eachCharacter.char_id === parseInt(event.currentTarget.getAttribute('id'))) ;
         if (!characterInFav){
             favCharacters.push(selectedCharacter);
         }

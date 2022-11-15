@@ -38,6 +38,10 @@
     background-color: $color-primary;
     margin-top: 30px;
   }
+  &__reset--btn:hover {
+    border: 2px solid white;
+    cursor: pointer;
+  }
 }
 .fa-trash-can {
   margin-right: 10px;
@@ -49,12 +53,23 @@
   height: 280px;
   margin-top: 20px;
   border-radius: 5px;
-  //border: solid 2px $color-primary;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  &--fav {
+    background-color: white;
+    box-shadow: 1px 1px 10px #888888;
+    width: 200px;
+    height: 280px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   &__heart {
     color: white;
     position: relative;
