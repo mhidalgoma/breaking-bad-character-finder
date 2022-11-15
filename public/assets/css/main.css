@@ -212,8 +212,14 @@ body {
     font-weight: 400;
     border: 2px solid #eebc28;
     border-radius: 5px; }
+    @media all and (min-width: 768px) {
+      .nav__input {
+        font-size: 15px; } }
   .nav__input:hover {
     box-shadow: 0 0 4px rgba(124, 116, 3, 0.5); }
+  .nav__input:focus {
+    outline: none;
+    border: 2px solid #1b191a; }
   .nav__btn {
     width: 28%;
     height: 37px;

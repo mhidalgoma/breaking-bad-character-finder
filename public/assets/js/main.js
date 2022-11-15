@@ -10,7 +10,6 @@ const favSection = document.querySelector('.js-fav-section');
 const resetBtn = document.querySelector('.js-reset-btn');
 const goFavBtn = document.querySelector('.js-btn-go-fav');
 
-
 //VARIABLES GLOBALES
 let allCharacters = [];
 let favCharacters = [];
@@ -18,8 +17,6 @@ let currentSearchCharacters = [];
 
 // FUNCIONES
 function renderOneCharacter (character){
-    
-    //Creo el li con todo lo que lleva dentro con DOM avanzado
     const characterElement = document.createElement('li');
     characterElement.classList.add ('character');
     characterElement.classList.add ('js-character');
@@ -32,9 +29,7 @@ function renderOneCharacter (character){
     characterHeart.classList.add ('fa-xl');
     divHeart.appendChild(characterHeart);       
     divHeart.classList.add('character__heart');
-    //divHeart.classList.add('hidden');
     characterElement.appendChild(divHeart);
-
 
     const characterImg = document.createElement('img');
     characterImg.classList.add ('character__img');
@@ -42,7 +37,6 @@ function renderOneCharacter (character){
     characterImg.setAttribute('alt',`image of ${character.name}`);
     characterElement.appendChild(characterImg);
     
-
     const characterName = document.createElement('h3');
     characterName.classList.add ('character__name');
     const textName = document.createTextNode(character.name);
@@ -58,8 +52,6 @@ function renderOneCharacter (character){
     return characterElement;
 }
 function renderOneFavCharacter(character){
-    
-    //Creo el li con todo lo que lleva dentro con DOM avanzado
     const characterElement = document.createElement('li');
     characterElement.classList.add ('character--fav');
     characterElement.classList.add ('js-fav-character');
@@ -72,7 +64,6 @@ function renderOneFavCharacter(character){
     iconHeartCross.classList.add ('fa-xl');
     divHeartCross.appendChild(iconHeartCross);       
     divHeartCross.classList.add('character__heart--cross');
-    //divHeartCross.classList.add('hidden');
     characterElement.appendChild(divHeartCross);
 
     const characterImg = document.createElement('img');
@@ -97,9 +88,7 @@ function renderOneFavCharacter(character){
 }
 function renderAllCharacters(){
     charactersList.innerHTML = '';
-
     const characters = currentSearchCharacters.length === 0 ? allCharacters : currentSearchCharacters;
-
     for (let i = 0; i < characters.length; i++) {
         const liCharacter= renderOneCharacter(characters[i]);  
         charactersList.appendChild(liCharacter);

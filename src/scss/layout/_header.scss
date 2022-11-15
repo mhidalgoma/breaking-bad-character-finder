@@ -8,12 +8,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   &__title {
     display: none;
   }
 }
-
 .nav {
   background-color: white;
   box-shadow: 1px 1px 10px #888888;
@@ -28,16 +26,21 @@
   &__input {
     width: 70%;
     font-size: 14px;
-
-    // font-size: 15px;
     padding: 8px 15px;
     color: $color-primary;
     font-weight: 400;
     border: 2px solid $color-primary;
     border-radius: 5px;
+    @media all and (min-width: 768px) {
+      font-size: 15px;
+    }
   }
   &__input:hover {
     box-shadow: 0 0 4px rgba(124, 116, 3, 0.5);
+  }
+  &__input:focus {
+    outline: none;
+    border: 2px solid #1b191a;
   }
   &__btn {
     width: 28%;
