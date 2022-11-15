@@ -239,7 +239,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 25px 40px 25px; }
+  padding: 70px 25px 120px 25px; }
   @media all and (min-width: 768px) {
     .characters {
       width: 65vw;
