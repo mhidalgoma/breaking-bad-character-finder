@@ -251,6 +251,7 @@ body {
   width: 200px;
   height: 280px;
   margin-top: 20px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
