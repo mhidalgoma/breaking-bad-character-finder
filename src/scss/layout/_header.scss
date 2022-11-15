@@ -30,6 +30,10 @@
     padding: 8px 15px;
     color: $color-primary;
     border: 2px solid $color-primary;
+    border-radius: 5px;
+  }
+  &__input:hover {
+    box-shadow: 0 0 4px rgba(124, 116, 3, 0.5);
   }
   &__btn {
     width: 28%;
@@ -39,5 +43,10 @@
     background-color: $color-primary;
     color: white;
     border: 2px solid $color-primary;
+    border-radius: 5px;
+  }
+  &__btn:hover {
+    box-shadow: 0 0 4px rgba(124, 116, 3, 0.5);
+    cursor: pointer;
   }
 }

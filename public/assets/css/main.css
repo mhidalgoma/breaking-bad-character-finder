@@ -166,7 +166,10 @@ body {
     font-size: 15px;
     padding: 8px 15px;
     color: #eebc28;
-    border: 2px solid #eebc28; }
+    border: 2px solid #eebc28;
+    border-radius: 5px; }
+  .nav__input:hover {
+    box-shadow: 0 0 4px rgba(124, 116, 3, 0.5); }
   .nav__btn {
     width: 28%;
     height: 37px;
@@ -174,7 +177,11 @@ body {
     font-weight: 600;
     background-color: #eebc28;
     color: white;
-    border: 2px solid #eebc28; }
+    border: 2px solid #eebc28;
+    border-radius: 5px; }
+  .nav__btn:hover {
+    box-shadow: 0 0 4px rgba(124, 116, 3, 0.5);
+    cursor: pointer; }
 
 .characters {
   min-height: 70vh;
