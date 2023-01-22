@@ -184,11 +184,11 @@ function handleClickCharacter(event) {
       eachCharacter.char_id === parseInt(event.currentTarget.getAttribute('id'))
   );
   console.log(selectedCharacter.name);
-  //event.currentTarget.classList.toggle('selected');
-  //addCharacterToFav(event);
-  //renderFavCharacters();
-  //hideShowFavSection();
-  //saveFavoritesToLocalStorage();
+  event.currentTarget.classList.toggle('selected');
+  addCharacterToFav(event);
+  renderFavCharacters();
+  hideShowFavSection();
+  saveFavoritesToLocalStorage();
 }
 function handleResetBtn(event) {
   event.preventDefault();
@@ -215,6 +215,7 @@ function handleClickHeart(event) {
       )
   );
   console.log(selectedCharacterPosition);
+  console.log('hola');
   favCharacters.splice(selectedCharacterPosition, 1);
   renderFavCharacters();
   saveFavoritesToLocalStorage();
@@ -229,8 +230,8 @@ resetBtn.addEventListener('click', handleResetBtn);
 // CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA
 fetch('./assets/data/characters.json')
   .then((response) => response.json())
-  .then((jsondata) => {
-    allCharacters = jsondata;
+  .then((json) => {
+    allCharacters = json;
     getFavoritesFromStorage();
     renderFavCharacters();
     renderAllCharacters();
