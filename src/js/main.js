@@ -183,7 +183,6 @@ function handleClickCharacter(event) {
     (eachCharacter) =>
       eachCharacter.char_id === parseInt(event.currentTarget.getAttribute('id'))
   );
-  console.log(selectedCharacter.name);
   //event.currentTarget.classList.toggle('selected');
   //addCharacterToFav(event);
   //renderFavCharacters();
@@ -214,7 +213,6 @@ function handleClickHeart(event) {
         event.currentTarget.closest('.js-fav-character').getAttribute('id')
       )
   );
-  console.log(selectedCharacterPosition);
   favCharacters.splice(selectedCharacterPosition, 1);
   renderFavCharacters();
   saveFavoritesToLocalStorage();
