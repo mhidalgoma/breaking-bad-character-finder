@@ -213,6 +213,7 @@ function handleClickHeart(event) {
         event.currentTarget.closest('.js-fav-character').getAttribute('id')
       )
   );
+
   favCharacters.splice(selectedCharacterPosition, 1);
   renderFavCharacters();
   saveFavoritesToLocalStorage();
@@ -227,8 +228,8 @@ resetBtn.addEventListener('click', handleResetBtn);
 // CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA
 fetch('./assets/data/characters.json')
   .then((response) => response.json())
-  .then((jsondata) => {
-    allCharacters = jsondata;
+  .then((json) => {
+    allCharacters = json;
     getFavoritesFromStorage();
     renderFavCharacters();
     renderAllCharacters();

@@ -209,7 +209,7 @@ body {
     font-size: 14px;
     padding: 8px 15px;
     color: #eebc28;
-    font-weight: 400;
+    font-weight: bold;
     border: 2px solid #eebc28;
     border-radius: 5px; }
     @media all and (min-width: 768px) {
