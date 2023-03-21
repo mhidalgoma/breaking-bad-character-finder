@@ -183,11 +183,11 @@ function handleClickCharacter(event) {
     (eachCharacter) =>
       eachCharacter.char_id === parseInt(event.currentTarget.getAttribute('id'))
   );
-  //event.currentTarget.classList.toggle('selected');
-  //addCharacterToFav(event);
-  //renderFavCharacters();
-  //hideShowFavSection();
-  //saveFavoritesToLocalStorage();
+  event.currentTarget.classList.toggle('selected');
+  addCharacterToFav(event);
+  renderFavCharacters();
+  hideShowFavSection();
+  saveFavoritesToLocalStorage();
 }
 function handleResetBtn(event) {
   event.preventDefault();

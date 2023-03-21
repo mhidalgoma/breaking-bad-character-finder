@@ -183,20 +183,11 @@ function handleClickCharacter(event) {
     (eachCharacter) =>
       eachCharacter.char_id === parseInt(event.currentTarget.getAttribute('id'))
   );
-<<<<<<< HEAD
-  //event.currentTarget.classList.toggle('selected');
-  //addCharacterToFav(event);
-  //renderFavCharacters();
-  //hideShowFavSection();
-  //saveFavoritesToLocalStorage();
-=======
-  console.log(selectedCharacter.name);
   event.currentTarget.classList.toggle('selected');
   addCharacterToFav(event);
   renderFavCharacters();
   hideShowFavSection();
   saveFavoritesToLocalStorage();
->>>>>>> 1dd0430ade49acedbda34324d5136cf67ed74885
 }
 function handleResetBtn(event) {
   event.preventDefault();
@@ -222,11 +213,7 @@ function handleClickHeart(event) {
         event.currentTarget.closest('.js-fav-character').getAttribute('id')
       )
   );
-<<<<<<< HEAD
-=======
-  console.log(selectedCharacterPosition);
-  console.log('hola');
->>>>>>> 1dd0430ade49acedbda34324d5136cf67ed74885
+
   favCharacters.splice(selectedCharacterPosition, 1);
   renderFavCharacters();
   saveFavoritesToLocalStorage();
